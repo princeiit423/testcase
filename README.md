@@ -1,4 +1,5 @@
- Test Case Generator App
+# Test Case Generator App
+
 This is a Node.js + Express web application that generates relevant test cases from your code or problem statement using Google Gemini AI API. It supports GitHub login authentication and provides a simple dashboard for code input and test case generation.
 
 📦 Features
