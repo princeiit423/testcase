@@ -65,21 +65,15 @@ GEMINI_API_KEY=your_gemini_api_key
 # DataBase Credentials
 MONGODB_URI= Your mongodb url
 
-🚀 Run the Project
+# 🚀 Run the Project
 bash
 Copy
 Edit
 npm start
 The app will start on http://localhost:3000
 
-📷 Screenshots
-Login Page
 
-Dashboard with code input
-
-Generated test cases result page
-
-🧑‍💻 Contributing
+# 🧑‍💻 Contributing
 Fork this repo
 
 Create a new branch (git checkout -b feature-branch)
@@ -90,5 +84,5 @@ Push to the branch (git push origin feature-branch)
 
 Open a Pull Request
 
-📃 License
+# 📃 License
 This project is licensed under the MIT License.
