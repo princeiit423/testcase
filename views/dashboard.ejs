@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-10">
+  <h2 class="text-2xl font-semibold mb-4">Welcome, <%= user.username %></h2>
+  <p class="mb-4">Choose a repository to fetch files:</p>
+
+  <div class="grid grid-cols-2 gap-4">
+    <% repos.forEach(repo => { %>
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="font-bold"><%= repo.name %></h3>
+        <a href="/api/github/files?repo=<%= repo.name %>" class="text-blue-600 underline">View Files</a>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

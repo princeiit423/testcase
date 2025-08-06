@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Repository Files</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 p-10">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6">Files in Repository</h1>
+
+    <% if (files && files.length > 0) { %>
+      <div class="space-y-4">
+        <% files.forEach(file => { %>
+          <div class="bg-white p-4 rounded shadow-md">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-lg font-semibold"><%= file.name %></p>
+                <p class="text-sm text-gray-500"><%= file.path %></p>
+                <a href="<%= file.html_url %>" class="text-blue-600 text-sm underline" target="_blank">View on GitHub</a>
+              </div>
+              <div class="flex space-x-2">
+                <!-- Summary Form -->
+                <form method="POST" action="/api/ai/summary">
+                  <input type="hidden" name="fileUrl" value="<%= file.download_url %>" />
+                  <input type="hidden" name="filePath" value="<%= file.path %>" />
+                  <input type="hidden" name="repoOwner" value="<%= owner %>" />
+                  <input type="hidden" name="repoName" value="<%= repo %>" />
+                  <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Generate Summary</button>
+                </form>
+
+                
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <p>No files found.</p>
+    <% } %>
+  </div>
+</body>
+</html>

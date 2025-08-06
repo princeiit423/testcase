@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Summary</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 p-8">
+  <h1 class="text-3xl font-bold mb-6">AI Summary for <%= filePath %></h1>
+
+  <div class="bg-white p-6 rounded shadow">
+    <pre class="whitespace-pre-wrap"><%= summary %></pre>
+  </div>
+
+  <!-- POST form to /generate-code -->
+  <form action="/api/ai/generate-code" method="POST" class="mt-6">
+    <input type="hidden" name="summary" value="<%= summary %>">
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+      Generate Code
+    </button>
+  </form>
+
+  <a href="/" class="mt-6 inline-block text-blue-600 hover:underline">← Back to Home</a>
+</body>
+</html>
